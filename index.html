@@ -1,32 +1,64 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RGB Strona</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tęczowa strona z Golfem 4</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .road {
+    position: relative;
+    width: 80%;
+    height: 200px;
+    background: gray;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .road::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: repeating-linear-gradient(
+      to right,
+      white,
+      white 40px,
+      transparent 40px,
+      transparent 80px
+    );
+    transform: translateY(-50%);
+  }
+
+  .car {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 150px;
+    transform: translateY(-50%);
+    animation: drive 5s linear infinite;
+  }
+
+  @keyframes drive {
+    0% { left: -160px; }
+    100% { left: 100%; }
+  }
+</style>
 </head>
 <body>
-
-  <!-- MENU -->
-  <nav>
-    <a href="niemajeszcze.html">niemajeszcze</a>
-    <a href="skoda.html"><img src="skoda-logo.png" alt="Skoda"> Skoda</a>
-    <a href="golf.html"><img src="golf-logo.png" alt="Golf"> Golf</a>
-  </nav>
-
-  <!-- NEONOWE NAPISY -->
-  <div class="floating skoda">Skoda</div>
-  <div class="floating skoda">Skoda</div>
-  <div class="floating skoda">Skoda</div>
-  <div class="floating skoda">Skoda</div>
-  <div class="floating golf">Golf</div>
-  <div class="floating golf">Golf</div>
-  <div class="floating golf">Golf</div>
-  <div class="floating golf">Golf</div>
-
-  <script src="script.js"></script>
-
+  <div class="road">
+    <img src="golf4.jpg" alt="Golf 4" class="car">
+  </div>
 </body>
 </html>
