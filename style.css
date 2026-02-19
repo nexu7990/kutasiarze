@@ -1,0 +1,71 @@
+/* style.css */
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(270deg, red, green, blue, purple);
+  background-size: 800% 800%;
+  animation: rgbBackground 5s linear infinite;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes rgbBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* MENU */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  background: transparent;
+  z-index: 10;
+}
+
+nav a {
+  padding: 12px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(90deg, red, green, blue);
+  box-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: neonBtn 3s linear infinite;
+}
+
+@keyframes neonBtn {
+  0% { filter: drop-shadow(0 0 5px #0ff); }
+  50% { filter: drop-shadow(0 0 20px #0ff); }
+  100% { filter: drop-shadow(0 0 5px #0ff); }
+}
+
+nav a:hover {
+  transform: scale(1.15);
+}
+
+nav img {
+  width: 20px;
+  height: 20px;
+}
+
+/* NEONOWE NAPISY */
+.floating {
+  position: absolute;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 20px currentColor;
+}
+
+.floating.skoda { color: #00ff88; }
+.floating.golf  { color: #00aaff; }
